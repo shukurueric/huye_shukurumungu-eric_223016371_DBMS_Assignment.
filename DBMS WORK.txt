@@ -1,0 +1,351 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 59
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database ruhande;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use database ruhande;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use ruhande;
+Database changed
+mysql> create table ngoma;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table ngoma(id int(16), f_name char(20), l_name char(40), gender char(60), province char(70), district char(75), sector char(54), cell char(53), email adress char(200), telephone int(90));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'adress char(200), telephone int(90))' at line 1
+mysql> create table ngoma(id int(16), f_name char(20), l_name char(40), gender char(60), province char(70), district char(75), sector char(54), cell char(53), email_adress char(200), telephone int(90));
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+mysql> insert into ngoma values(1202223456780987,"shukuru","eric","m","north","rulindo","kinihira","karegamazi","shukurumungueric@gmail.com",0785700953);
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> insert into ngoma values(1200355555555555,"mukama","ruth","f","north","musanze","muhoza","bwishya","mukamaruth@gmail.com",0795436789);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma value(1200378905432567,"kayitesi","delyse","east","nyagatare","mibirizi","ryarubega","kayitesidelyse@gmail.com",0789654321);
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into ngoma value(1200378905432567,"kayitesi","delyse","f","east","nyagatare","mibirizi","ryarubega","kayitesidelyse@gmail.com",0789654321);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(1200567890543217,"mpumure","esperance","f","east","nyagatare","kagitumba","rwibitoki","mpumureesperance@gmail.com",0797543875);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(1199087878787865,"iranzi","claude","m","west","nyamasheke","rwiri","cyungo","iranziclaude@gmail.com",0798654321);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(1987555555647890,"mbabazi","kelly","f","kigali_city","nyarugenge","nyamirambo","kibagabaga"mbabazikelly@gmail.com",0785427867);
+    ">
+    "> insert into ngoma values(1987555555647890,"mbabazi","kelly","f","kigali_city","nyarugenge","nyamirambo","kibagabaga"mbabazikelly@gmail.com",0785427867);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mbabazikelly@gmail.com",0785427867);
+
+insert into ngoma values(1987555555647890,' at line 1
+mysql>  insert into ngoma values(1987555555647890,"mbabazi","kelly","f","kigali_city","nyarugenge","nyamirambo","kibagabaga","mbabazikelly@gmail.com",0785427867);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(0786543211234523,"emmar","claudine","m","kigali_city","gasaba","nyacyonga","nduba","emmarclaudine@gmail.com",0785433278);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(1200355555555555,"mukama","ruth","f","north","musanze","muhoza","bwishya","mukamaruth@gmail.com",0795436789);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql>  insert into ngoma values(1200567890543217,"mpumure","esperance","f","east","nyagatare","kagitumba","rwibitoki","mpumureesperance@gmail.com",0797543875);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql>  insert into ngoma values(1987555555647890,"mbabazi","kelly","f","kigali_city","nyarugenge","nyamirambo","kibagabaga","mbabazikelly@gmail.com",0785427867);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> select * from ngoma;
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id         | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| 2147483647 | shukuru  | eric      | m      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | iranzi   | claude    | m      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+| 2147483647 | emmar    | claudine  | m      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> select from ngoma "district","cell";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from ngoma "district","cell"' at line 1
+mysql> select from ngoma "district","cell"
+    -> select from ngoma ("district","cell");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from ngoma "district","cell"
+select from ngoma ("district","cell")' at line 1
+mysql> select * from ngoma
+    -> ;
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id         | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| 2147483647 | shukuru  | eric      | m      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | iranzi   | claude    | m      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+| 2147483647 | emmar    | claudine  | m      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> ^C
+mysql> update ngoma set gender="f" where id=2147483647;
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 10  Changed: 3  Warnings: 0
+
+mysql> select * from ngoma;
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id         | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| 2147483647 | shukuru  | eric      | f      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+| 2147483647 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set gender="m" where id="2147483647";
+Query OK, 10 rows affected (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> update gender set gender="m" where id="2147483647";
+ERROR 1146 (42S02): Table 'ruhande.gender' doesn't exist
+mysql> update gender set gender="f" where id="2147483647";
+ERROR 1146 (42S02): Table 'ruhande.gender' doesn't exist
+mysql> update gender set gender="f" where id="2147483647";
+ERROR 1146 (42S02): Table 'ruhande.gender' doesn't exist
+mysql> select * from ngoma;
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id         | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| 2147483647 | shukuru  | eric      | m      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+| 2147483647 | mukama   | ruth      | m      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | kayitesi | delyse    | m      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+| 2147483647 | mpumure  | esperance | m      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | iranzi   | claude    | m      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+| 2147483647 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+| 2147483647 | emmar    | claudine  | m      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+| 2147483647 | mukama   | ruth      | m      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | mpumure  | esperance | m      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set gender="f" where id=2147483647;
+Query OK, 10 rows affected (0.00 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+mysql> ^C
+mysql> ^C
+mysql> select *from ngoma;
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id         | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| 2147483647 | shukuru  | eric      | f      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+| 2147483647 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+| 2147483647 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+| 2147483647 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+| 2147483647 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma id='101' where f_name='shukuru';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='101' where f_name='shukuru'' at line 1
+mysql> update ngoma set id='101' where f_name='shukuru';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set id='102' where f_name='mukama';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update ngoma set id='103' where f_name='kayitesi';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set id='104' where f_name='mpumure';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update ngoma set id='105' and genger='m' where f_name='iranzi';
+ERROR 1054 (42S22): Unknown column 'genger' in 'field list'
+mysql> update ngoma set id='105' where f_name='iranzi';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set id='106' where f_name='mbabazi';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update ngoma set id='106' where f_name='mukama';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update ngoma set id='107' where f_name='mpumure';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update ngoma set id='108' where f_name='mbabazi';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select *from gnoma;
+ERROR 1146 (42S02): Table 'ruhande.gnoma' doesn't exist
+mysql> select *from ngoma;
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id         | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+|        101 | shukuru  | eric      | f      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+|        106 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+|        103 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+|        107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+|        105 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+|        108 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+| 2147483647 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+|        106 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+|        107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+|        108 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set id='110' where f_name='emmar';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from ngoma;
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id   | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+|  101 | shukuru  | eric      | f      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+|  106 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+|  103 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+|  105 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+|  108 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+|  110 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+|  106 | mukama   | ruth      | f      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+|  108 | mbabazi  | kelly     | f      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set gender='m' where l_name='eric';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set gender='m' where l_name='kelly';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update ngoma set gender='m' where l_name='ruth';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select* from ngoma;
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+| id   | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone |
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+|  101 | shukuru  | eric      | m      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |
+|  106 | mukama   | ruth      | m      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+|  103 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+|  105 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |
+|  108 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
+|  110 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |
+|  106 | mukama   | ruth      | m      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |
+|  108 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+
+10 rows in set (0.00 sec)
+
+mysql> alter table ngoma add marks int;
+Query OK, 10 rows affected (0.07 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from ngoma;
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+-------+
+| id   | f_name   | l_name    | gender | province    | district   | sector     | cell       | email_adress               | telephone | marks |
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+-------+
+|  101 | shukuru  | eric      | m      | north       | rulindo    | kinihira   | karegamazi | shukurumungueric@gmail.com | 785700953 |  NULL |
+|  106 | mukama   | ruth      | m      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |  NULL |
+|  103 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | ryarubega  | kayitesidelyse@gmail.com   | 789654321 |  NULL |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |  NULL |
+|  105 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | cyungo     | iranziclaude@gmail.com     | 798654321 |  NULL |
+|  108 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |  NULL |
+|  110 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | nduba      | emmarclaudine@gmail.com    | 785433278 |  NULL |
+|  106 | mukama   | ruth      | m      | north       | musanze    | muhoza     | bwishya    | mukamaruth@gmail.com       | 795436789 |  NULL |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | rwibitoki  | mpumureesperance@gmail.com | 797543875 |  NULL |
+|  108 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | kibagabaga | mbabazikelly@gmail.com     | 785427867 |  NULL |
++------+----------+-----------+--------+-------------+------------+------------+------------+----------------------------+-----------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select f_name,province,email_adress;
+ERROR 1054 (42S22): Unknown column 'f_name' in 'field list'
+mysql> select f_name,province,email_adress from ngoma;
++----------+-------------+----------------------------+
+| f_name   | province    | email_adress               |
++----------+-------------+----------------------------+
+| shukuru  | north       | shukurumungueric@gmail.com |
+| mukama   | north       | mukamaruth@gmail.com       |
+| kayitesi | east        | kayitesidelyse@gmail.com   |
+| mpumure  | east        | mpumureesperance@gmail.com |
+| iranzi   | west        | iranziclaude@gmail.com     |
+| mbabazi  | kigali_city | mbabazikelly@gmail.com     |
+| emmar    | kigali_city | emmarclaudine@gmail.com    |
+| mukama   | north       | mukamaruth@gmail.com       |
+| mpumure  | east        | mpumureesperance@gmail.com |
+| mbabazi  | kigali_city | mbabazikelly@gmail.com     |
++----------+-------------+----------------------------+
+10 rows in set (0.00 sec)
+
+mysql> alter ngoma drop cell;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ngoma drop cell' at line 1
+mysql> alter table ngoma drop cell;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+----------+-----------+--------+-------------+------------+------------+----------------------------+-----------+-------+
+| id   | f_name   | l_name    | gender | province    | district   | sector     | email_adress               | telephone | marks |
++------+----------+-----------+--------+-------------+------------+------------+----------------------------+-----------+-------+
+|  101 | shukuru  | eric      | m      | north       | rulindo    | kinihira   | shukurumungueric@gmail.com | 785700953 |  NULL |
+|  106 | mukama   | ruth      | m      | north       | musanze    | muhoza     | mukamaruth@gmail.com       | 795436789 |  NULL |
+|  103 | kayitesi | delyse    | f      | east        | nyagatare  | mibirizi   | kayitesidelyse@gmail.com   | 789654321 |  NULL |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | mpumureesperance@gmail.com | 797543875 |  NULL |
+|  105 | iranzi   | claude    | f      | west        | nyamasheke | rwiri      | iranziclaude@gmail.com     | 798654321 |  NULL |
+|  108 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | mbabazikelly@gmail.com     | 785427867 |  NULL |
+|  110 | emmar    | claudine  | f      | kigali_city | gasaba     | nyacyonga  | emmarclaudine@gmail.com    | 785433278 |  NULL |
+|  106 | mukama   | ruth      | m      | north       | musanze    | muhoza     | mukamaruth@gmail.com       | 795436789 |  NULL |
+|  107 | mpumure  | esperance | f      | east        | nyagatare  | kagitumba  | mpumureesperance@gmail.com | 797543875 |  NULL |
+|  108 | mbabazi  | kelly     | m      | kigali_city | nyarugenge | nyamirambo | mbabazikelly@gmail.com     | 785427867 |  NULL |
++------+----------+-----------+--------+-------------+------------+------------+----------------------------+-----------+-------+
+10 rows in set (0.00 sec)
+
+mysql>
